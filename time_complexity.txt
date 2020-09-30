@@ -1,0 +1,99 @@
+The physical layer or layer 1 is the first and lowest layer which is responsible to send your data in the form of 0’s and and 1’s or in the form of analog signals. Data can be in the form of text, pictures etc, it is the responsibility of the physical layer to send your data in the form of 0’s and and 1’s or analog signals over a medium. Medium is very important in network whether it is a wired or wireless but without medium we cannot communicate.
+The layer 2 which is a data link layer is responsible for error correction and error checking mechanism inside your network. Physical and data link layer are responsible for the LAN. LAN is always connected using a central device called Switch. Switch identifies the device using mac address, so switch and mac addresses always work on a data link layer.
+The network layer or layer 3 is responsible to connect the WAN. Physical and data link layers are associated with LAN while network layer is associated with WAN. WAN is a combination of multiple LAN’s or WAN’s and are connected using an intermediate device called Router. Router always connect different networks and uses IP address, so routers and IP addresses always work on a network layer.
+The remaining four layers are called as Software Layers which are transport layer, session layer, presentation layer and application layer. And, the three which are defined above are hardware layers which are physical layer, data link layer and network layer. The software layers are responsible to run different set of protocols. Protocols are the set of rules which allows you to communicate over a network.
+Application, Presentation and Session layers are just going to format your data that how it looks like to the end-users. Application layer format your data in a user-friendly environment. Presentation layer is going to present your data and session layer is going to create a virtual session between two computers. The transport layer uses two protocols which are TCP and UDP. TCP stands for Transmission Control Protocol which is connection oriented protocol and UDP stands for User Datagram Protocol which is connection less protocol. In TCP connectivity whensoever you are going to send some data, the receiver must have to send a acknowledgement back to the sender about the status of data that whether it is received or not. In UDP, there is no any response that is coming whether your data has been received or not at the receiver end.
+
+
+
+
+
+---------ADA----------
+
+Sometimes, there are more than one way to solve a problem. We need to learn how to compare the performance different algorithms and choose the best one to solve a particular problem. While analyzing an algorithm, we mostly consider time complexity and space complexity. Time complexity of an algorithm quantifies the amount of time taken by an algorithm to run as a function of the length of the input. Similarly, Space complexity of an algorithm quantifies the amount of space or memory taken by an algorithm to run as a function of the length of the input.
+
+Time and space complexity depends on lots of things like hardware, operating system, processors, etc. However, we don't consider any of these factors while analyzing the algorithm. We will only consider the execution time of an algorithm.
+
+O-Notation:
+To denote asymptotic upper bound, we use O-notation. For a given function g(n), we denote by O(g(n)) (pronounced “big-oh of g of n”) the set of functions:
+O(g(n))= { f(n) : there exist positive constants c and n0 such that 0≤f(n)≤c∗g(n) for all n≥n0 }
+
+Ω-Notation:
+To denote asymptotic lower bound, we use Ω-notation. For a given function g(n), we denote by Ω(g(n)) (pronounced “big-omega of g of n”) the set of functions:
+Ω(g(n))= { f(n) : there exist positive constants c and n0 such that 0≤c∗g(n)≤f(n) for all n≥n0 }
+
+Θ-notation:
+To denote asymptotic tight bound, we use Θ-notation. For a given function g(n), we denote by Θ(g(n)) (pronounced “big-theta of g of n”) the set of functions:
+Θ(g(n))= { f(n) : there exist positive constants c1,c2 and n0 such that 0≤c1∗g(n)≤f(n)≤c2∗g(n) for all n>n0 }
+
+
+Space Complexity
+The term Space Complexity is misused for Auxiliary Space at many places. Following are the correct definitions of Auxiliary Space and Space Complexity.
+
+Auxiliary Space is the extra space or temporary space used by an algorithm.
+
+Space Complexity of an algorithm is total space taken by the algorithm with respect to the input size. Space complexity includes both Auxiliary space and space used by input.
+
+Example : If we want to compare standard sorting algorithms on the basis of space, then Auxiliary Space would be a better criteria than Space Complexity. Merge Sort uses O(n) auxiliary space, Insertion sort and Heap Sort use O(1) auxiliary space. Space complexity of all these sorting algorithms is O(n) though.
+
+
+Time Complexity
+Imagine a classroom of 100 students in which you gave your pen to one person. Now, you want that pen. Here are some ways to find the pen and what the O order is.
+
+Constant time complexity = O(n)  : 
+Going and asking each student individually is O(N) or Constant time complexity.
+
+Quadratic time complexity = O(n2) : 
+You go and ask the first person of the class, if he has the pen. Also, you ask this person about other 99 people in the classroom if they have that pen and so on, This is what we call O(n2) or Quadratic time complexity.
+
+Logarithmic time compleity = O(log n) : 
+Now I divide the class into two groups, then ask: “Is it on the left side, or the right side of the classroom?” Then I take that group and divide it into two and ask again, and so on. Repeat the process till you are left with one student who has your pen. This is what you mean by O(log n) or Logarithmic time complexity.
+
+Time Complexity of algorithm/code is not equal to the actual time required to execute a particular code but the number of times a statement executes.
+Write code in any language to find maximum between N numbers, where N varies from 10, 100, 1000, 10000.
+You will get surprising results i.e. for N = 10 you may get 0.5ms time and for N = 10, 000 you may get 0.2 ms time. Also, you will get different timings on the different machine. So, we can say that actual time requires to execute code is machine dependent (whether you are using pentium1 or pentiun5) and also it considers network load if your machine is in LAN/WAN. Even you will not get the same timings on the same machine for the same code, the reason behind that the current network load.
+
+The question arises if time complexity is not the actual time require executing the code then what is it?
+The answer is -> Instead of measuring actual time required in executing each statement in the code, we consider how many times each statement execute.
+Example 1 :
+#include <stdio.h> 
+int main() 
+{ 
+    printf("Hello World"); 
+} 
+Output : Hello World
+In above code “Hello World!!!” print only once on a screen. So, time complexity is constant: O(1) i.e. every time constant amount of time require to execute code, no matter which operating system or which machine configurations you are using.
+
+Example 2 :
+#include <stdio.h> 
+void main() 
+{ 
+    int i, n = 8; 
+    for (i = 1; i <= n; i++) { 
+        printf("Hello Word !!!"); 
+    } 
+} 
+Output: Hello Word !!!Hello Word !!!Hello Word !!!Hello Word !!!
+             Hello Word !!!Hello Word !!!Hello Word !!!Hello Word !!!
+In above code “Hello World!!!” will print N times. So, time complexity of above code is O(N).
+
+Constant time complexity = O(1)
+Example 1 :
+Sum(a,b)     // 0
+{                   // 0
+return a+b;  // no of times = 1 
+}                   // 0
+time complexity : 0 + 0 + 1 + 0 = O(1)
+
+Linear time complexity = O(n)
+Example 1 :
+list_Sum(A,n)          // 0
+{                               // 0
+total =0 ;                   // no of times = 1 
+for i=0 to n-1             // no of times = n+1 (+1 for the end false condition) 
+sum = sum + A[i];     // no of times = n  
+return sum;               // no of times = 1 
+}                                 // 0   
+time complexity : 0 + 0 + 1 + n+1 + n + 1 + 0 = 2n + 3 = O(n)
+
+
