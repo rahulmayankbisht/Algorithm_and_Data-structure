@@ -1,1 +1,17 @@
+#include <stdio.h> 
 
+int max(int a, int b) 
+{ 
+    return (a > b) ? a : b; 
+} 
+
+int knapSack_algo (int W, int array_b[], int array_a[], int n) 
+{ 
+
+    if (n == 0 || W == 0) 
+        return 0; 
+
+    if (array_b[n - 1] > W) 
+        return knapSack_algo (W, array_b, array_a, n - 1); 
+  
+    else
