@@ -1,0 +1,2 @@
+# Algorithm_and_Data-structure
+A REPOSITORY FOR ALORITHMS AND DATA-STRUCTURES.
